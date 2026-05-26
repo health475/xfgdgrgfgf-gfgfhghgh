@@ -12,7 +12,7 @@ const app = express();
 const server = http.createServer(app);
 
 app.set('trust proxy', true);
-app.use(helmet({ contentSecurityPolicy: false });
+app.use(helmet({ contentSecurityPolicy: false }));
 
 // Anti-bot: X-Robots-Tag header on all responses
 app.use((req, res, next) => {
