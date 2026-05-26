@@ -1,4 +1,5 @@
 
+
 require('dotenv').config();
 const express = require('express');
 const http = require('http');
@@ -10,7 +11,8 @@ const rateLimit = require('express-rate-limit');
 const app = express();
 const server = http.createServer(app);
 
-app.use(helmet({ contentSecurityPolicy: false }));
+app.set('trust proxy', true);
+app.use(helmet({ contentSecurityPolicy: false });
 
 // Anti-bot: X-Robots-Tag header on all responses
 app.use((req, res, next) => {
